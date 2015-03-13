@@ -9,28 +9,28 @@
 
 	<title>StudExpo</title>
 
-	<link rel="stylesheet" type="text/css" href="less/libs/jquery.fancybox.css"/>
-	<link rel="stylesheet" type="text/css" href="/style.css"/>
+	<link rel="stylesheet" type="text/css" href="wp-content/themes/studexpo/less/libs/jquery.fancybox.css"/>
+	<link rel="stylesheet" type="text/css" href="wp-content/themes/studexpo/less/styles.css"/>
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
-	<script src="/js/libs/jquery.js?v=1.11.1"></script>
-	<script src="/js/libs/handlebars.min.js"></script>
-	<script src="/js/libs/bootstrap.min.js"></script>
-	<script src="/js/libs/underscore-min.js"></script>
-	<script src="/js/libs/idangerous.swiper.min.js"></script>
-	<script src="/js/libs/idangerous.swiper.scrollbar.min.js"></script>
-	<script src="/http://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.0.0/isotope.pkgd.min.js"></script>
-	<script src="/js/libs/jquery.fancybox.min.js?v=2.1.5"></script>
-	<script src="/js/libs/jquery.mousewheel-3.0.6.pack.js"></script>
-	<script src="/js/libs/bootstrap-select.min.js"></script>
-	<script src="/js/libs/responsive-nav.js"></script>
+	<script src="wp-content/themes/studexpo/js/libs/jquery.js?v=1.11.1"></script>
+	<script src="wp-content/themes/studexpo/js/libs/handlebars.min.js"></script>
+	<script src="wp-content/themes/studexpo/js/libs/bootstrap.min.js"></script>
+	<script src="wp-content/themes/studexpo/js/libs/underscore-min.js"></script>
+	<script src="wp-content/themes/studexpo/js/libs/idangerous.swiper.min.js"></script>
+	<script src="wp-content/themes/studexpo/js/libs/idangerous.swiper.scrollbar.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.0.0/isotope.pkgd.min.js"></script>
+	<script src="wp-content/themes/studexpo/js/libs/jquery.fancybox.min.js?v=2.1.5"></script>
+	<script src="wp-content/themes/studexpo/js/libs/jquery.mousewheel-3.0.6.pack.js"></script>
+	<script src="wp-content/themes/studexpo/js/libs/bootstrap-select.min.js"></script>
+	<script src="wp-content/themes/studexpo/js/libs/responsive-nav.js"></script>
 
 	<!--Owl Carousel Lib-->
-	<link rel="stylesheet" href="less/libs/owl.carousel.css">
-	<link rel="stylesheet" href="less/libs/owl.theme.css">
-	<script src="js/libs/owl.carousel.js"></script>
+	<link rel="stylesheet" href="wp-content/themes/studexpo/less/libs/owl.carousel.css">
+	<link rel="stylesheet" href="wp-content/themes/studexpo/less/libs/owl.theme.css">
+	<script src="wp-content/themes/studexpo/js/libs/owl.carousel.js"></script>
 	
-	<script src="js/main.js"></script>
+	<script src="wp-content/themes/studexpo/js/main.js"></script>
 
 	
 </head>

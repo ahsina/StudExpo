@@ -10,20 +10,19 @@
 	<title>StudExpo</title>
 
 	<link rel="stylesheet" type="text/css" href="less/libs/jquery.fancybox.css"/>
-	<link rel="stylesheet" type="text/css" href="less/styles.css"/>
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
-	<script src="js/libs/jquery.js?v=1.11.1"></script>
-	<script src="js/libs/handlebars.min.js"></script>
-	<script src="js/libs/bootstrap.min.js"></script>
-	<script src="js/libs/underscore-min.js"></script>
-	<script src="js/libs/idangerous.swiper.min.js"></script>
-	<script src="js/libs/idangerous.swiper.scrollbar.min.js"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.0.0/isotope.pkgd.min.js"></script>
-	<script src="js/libs/jquery.fancybox.min.js?v=2.1.5"></script>
-	<script src="js/libs/jquery.mousewheel-3.0.6.pack.js"></script>
-	<script src="js/libs/bootstrap-select.min.js"></script>
-	<script src="js/libs/responsive-nav.js"></script>
+	<script src="/js/libs/jquery.js?v=1.11.1"></script>
+	<script src="/js/libs/handlebars.min.js"></script>
+	<script src="/js/libs/bootstrap.min.js"></script>
+	<script src="/js/libs/underscore-min.js"></script>
+	<script src="/js/libs/idangerous.swiper.min.js"></script>
+	<script src="/js/libs/idangerous.swiper.scrollbar.min.js"></script>
+	<script src="/http://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.0.0/isotope.pkgd.min.js"></script>
+	<script src="/js/libs/jquery.fancybox.min.js?v=2.1.5"></script>
+	<script src="/js/libs/jquery.mousewheel-3.0.6.pack.js"></script>
+	<script src="/js/libs/bootstrap-select.min.js"></script>
+	<script src="/js/libs/responsive-nav.js"></script>
 
 	<!--Owl Carousel Lib-->
 	<link rel="stylesheet" href="less/libs/owl.carousel.css">
@@ -31,6 +30,12 @@
 	<script src="js/libs/owl.carousel.js"></script>
 	
 	<script src="js/main.js"></script>
+
+	<?php 
+
+	include 'functions.php' ;
+
+	?>
 
 	
 </head>
