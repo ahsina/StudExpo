@@ -16,7 +16,7 @@ if(!empty($_POST['idClient']) && !empty($_POST['sujet']) && !empty($_POST['corps
 	global $wpdb;
 		$listOfUsers = $wpdb->get_results(
 		"SELECT email
-		FROM ste_Visiteurs 
+		FROM ste_UserConcours 
 		WHERE id="+$_POST['idClient']);
 		$ContactEmails = $wpdb->get_results(
 		"SELECT email 
