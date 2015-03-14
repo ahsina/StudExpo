@@ -12,3 +12,6 @@ Template Name: Login
 <input type="submit" value="login" name="login" class="button-primary"/>
 </div>
 </form>
+<form method="post" name="logout">
+<input type="submit" value="logout" name="logout" class="button-primary"/>
+</form>

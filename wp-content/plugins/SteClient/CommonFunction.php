@@ -166,17 +166,32 @@ function CheckLogin()
 {
      session_start();
       
-     if(empty($_SESSION['user']))
+     if(empty($_SESSION['connexionID']))
      {
         return false;
      }
      return true;
 }
-
+function logout(){
+	if(!empty($_POST['logout'])){
+		echo 'logout';
+		session_start();
+		session_destroy();
+		exit();
+	}
+}
+logout();
 if(!CheckLogin()){	
 	if(!empty($_POST['email']) && !empty($_POST['password'])){
 		if(Login()){
+			echo 'ok';
 		}
+		else{
+			echo 'notok';
+		}
+	}
+	else{
+		echo 'bad credentiel';
 	}
 }
 else{
