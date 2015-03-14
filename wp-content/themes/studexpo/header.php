@@ -62,7 +62,7 @@
 		<nav class="main-menu">
 			<div class="container">
 				<div class="logo">
-					<a href="">
+					<a href="index.php">
 						<img class="nav-logo logo" src="img/Logo_Expo_Officiel.png" />
 					</a>
 				</div>
