@@ -45,18 +45,41 @@
 					<a href="" target="_blank"><i class="fa fa-google-plus"></i></a>
 					<a href="" target="_blank"><i class="fa fa-rss"></i></a>
 				</div>
-				<ul class="nav navbar-nav navbar-right pull-right">
-					<li>
-						<a href="modal-sign-in.php" class="fancyBoxTitle fancybox.ajax" ref="signin" title="Se connecter">
-							<i class="fa fa-user"></i> Connexion
-						</a>
-					</li>
-					<li>
-						<a href="#" title="S'inscrire">
-							<i class="fa fa-sign-in"></i> Inscription
-						</a>
-					</li>
-				</ul>
+				<?php 
+				if(!CheckLogin()) {
+					echo "
+						<ul class='nav navbar-nav navbar-right pull-right'>
+							<li>
+								<a href='modal-sign-in.php' class='fancyBoxTitle fancybox.ajax' ref='signin' title='Se connecter'>
+									<i class='fa fa-user'></i> Connexion
+								</a>
+							</li>
+							<li>
+								<a href='#' title='S'inscrire'>
+									<i class='fa fa-sign-in'></i> Inscription
+								</a>
+							</li>
+						</ul>
+					";
+				} else {
+					echo "
+
+						<ul class='nav navbar-nav navbar-right pull-right'>
+							<li>
+								<a href='modal-sign-in.php' class='fancyBoxTitle fancybox.ajax' ref='signin' title='Se connecter'>
+									<i class='fa fa-user'></i> Bonjour, User
+								</a>
+							</li>
+							<li>
+								<a href='#' title='S'inscrire'>
+									<i class='fa fa-sign-out'></i> Deconnexion
+								</a>
+							</li>
+						</ul>
+					";
+				}
+				?>
+
 			</div>
 		</nav>
 		<nav class="main-menu">
