@@ -11,7 +11,7 @@
 			$NUtel = $_POST['tel'];
 			$NUadresse = $_POST['adresse'];
 			$NUcodePostal = $_POST['codePostal'];
-			
+			$Password='test';
 			
 			if(!empty($NUcivilite) && !empty($NUnom) && !empty($NUprenom) && !empty($NUnomAsso) 
 			&& !empty($NUnumAsso) && !empty($NUemail) && !empty($NUville) && !empty($NUtel)&& !empty($NUadresse) && !empty($NUcodePostal)){
@@ -20,8 +20,12 @@
 				$resut=$wpdb->insert( 
 				'ste_visiteurs', 
 				array('id' => NULL,'civilite' => $NUcivilite,'nom' => $NUnom, 'prenom' =>$NUprenom,
-				'nomAsso' => $NUnomAsso, 'numAsso' => $NUnumAsso, 'email' => $NUemail, 'ville' => $NUville, 'Tel' => $NUtel,'Adresse'=>$NUadresse
+				'nomAsso' => $NUnomAsso, 'numAsso' => $NUnumAsso, 'ville' => $NUville, 'Tel' => $NUtel,'Adresse'=>$NUadresse
 				,'CodePostal'=>$NUcodePostal)
+				);
+				$wpdb->insert( 
+					'ste_connexion', 
+					array('id' => NULL, 'email' => $NUemail,'password' => $Password,'role'=>1,'userid'=>$wpdb->insert_id)
 				);
 				///Notify: user succesfully Added
 			}
@@ -70,8 +74,8 @@ if (!empty($_POST['idVisiteur'])) {
 function getVisiteurInfo($id){
 		global $wpdb;
 		$user = $wpdb->get_results(
-		"SELECT id,civilite,nom,prenom,nomAsso,numAsso,email,ville,tel,adresse,codepostal
-		FROM ste_visiteurs where id=".$id);
+		"SELECT v.id,v.civilite,v.nom,v.prenom,v.nomAsso,v.numAsso,v.ville,v.tel,v.adresse,v.codepostal,c.email
+		FROM ste_visiteurs v, ste_connexion c where v.id=".$id." and v.id=c.userid and c.role=1");
 
 		$_SESSION['ID']=$id;
 		$_SESSION['MUcivilite']=$user[0]->civilite;
@@ -100,7 +104,7 @@ function UpdateVisiteurInfo(){
 		$Extel = $_POST['tel'];
 		$Exadresse = $_POST['adresse'];
 		$ExcodePostal = $_POST['codePostal'];
-
+		$ExPassword ='';
 		if(!empty($Excivilite) && !empty($Exnom) && !empty($Exprenom) && !empty($ExnomAsso) 
 		&& !empty($ExnumAsso) && !empty($Exemail) && !empty($Exville) && !empty($Extel)&& !empty($Exadresse)&& !empty($ExcodePostal)){
 			
@@ -112,6 +116,13 @@ function UpdateVisiteurInfo(){
 			,'codepostal' =>$ExcodePostal)
 			,array( 'id' => $ExidVisiteur)
 			);
+			
+			$result=$wpdb->update( 
+				'ste_connexion', 
+				array('email' => $Exemail,'password' =>$ExPassword)
+			,array( 'userid' => $ExidVisiteur,'role'=>1)
+			);
+			
 		}
 	
 		//reactualiser les données de l'utilisateur

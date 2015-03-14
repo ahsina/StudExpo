@@ -1,4 +1,4 @@
-<?php 	
+<?php
 	function addNewExposant(){
 		if (empty($_POST['idV'])) {
 			$NUlibelleEntreprise = $_POST['libelleEntreprise'];
@@ -12,6 +12,7 @@
 			$NUprenom = $_POST['prenom'];
 			$NUfonction = $_POST['fonction'];
 			$NUemail = $_POST['email'];
+			$Password='test';
 			
 			if(!empty($NUlibelleEntreprise) && !empty($NUNumSiret) && !empty($NUSecteurActivite) && !empty($NUAdresseSiege) 
 			&& !empty($NUCodePostal) && !empty($NUVille) && !empty($NUCivilite) && !empty($NUnom) && !empty($NUprenom) && !empty($NUfonction)
@@ -22,7 +23,12 @@
 				'ste_exposants', 
 				array('id' => NULL,'libelleEntreprise' => $NUlibelleEntreprise,'NumSiret' => $NUNumSiret, 'SecteurActivite' =>$NUSecteurActivite,
 				'AdresseSiege' => $NUAdresseSiege, 'CodePostal' => $NUCodePostal, 'Ville' => $NUVille, 'Civilite' => $NUCivilite, 'nom' => $NUnom,
-				'prenom' => $NUprenom, 'fonction' => $NUfonction, 'email' => $NUemail)
+				'prenom' => $NUprenom, 'fonction' => $NUfonction)
+				);
+				
+				$wpdb->insert( 
+					'ste_connexion', 
+					array('id' => NULL, 'email' => $NUemail,'password' => $Password,'role'=>2,'userid'=>$wpdb->insert_id)
 				);
 				///Notify: user succesfully Added
 			}
@@ -77,8 +83,8 @@ if (!empty($_POST['idExposant'])) {
 function getExposantInfo($id){
 		global $wpdb;
 		$user = $wpdb->get_results(
-		"SELECT cl.civilite,cl.libelleEntreprise,cl.NumSiret,cl.SecteurActivite,cl.AdresseSiege,cl.CodePostal,cl.Ville,cl.nom,cl.prenom,cl.fonction,cl.email
-		FROM ste_exposants cl where id=".$id);
+		"SELECT cl.civilite,cl.libelleEntreprise,cl.NumSiret,cl.SecteurActivite,cl.AdresseSiege,cl.CodePostal,cl.Ville,cl.nom,cl.prenom,cl.fonction,c.email
+		FROM ste_exposants cl, ste_connexion c where cl.id=".$id." and cl.id=c.userid and c.role=2");
 		
 		$_SESSION['ID']=$id;
 		$_SESSION['MUlibelleEntreprise']=$user[0]->libelleEntreprise;
@@ -108,7 +114,7 @@ function UpdateExposantInfo(){
 		$Exprenom = $_POST['prenom'];
 		$Exfonction = $_POST['fonction'];
 		$Exemail = $_POST['email'];
-		$result="";
+		$ExPassword ='';
 		if(!empty($ExidExposant) && !empty($ExlibelleEntreprise) && !empty($ExNumSiret) && !empty($ExSecteurActivite) 
 		&& !empty($ExAdresseSiege) && !empty($ExCodePostal) && !empty($ExVille) && !empty($ExCivilite) && !empty($Exnom) && !empty($Exprenom)
 		&& !empty($Exfonction)&& !empty($Exemail)){
@@ -118,7 +124,13 @@ function UpdateExposantInfo(){
 				'ste_exposants', 
 				array('civilite' => $ExCivilite,'libelleEntreprise' => $ExlibelleEntreprise, 'NumSiret' =>$ExNumSiret,
 			'SecteurActivite' => $ExSecteurActivite, 'AdresseSiege' => $ExAdresseSiege, 'CodePostal' => $ExCodePostal, 'Ville' => $ExVille,
-			'nom' => $Exnom,'prenom' => $Exprenom, 'fonction' => $Exfonction,'email' => $Exemail),array( 'id' => $ExidExposant)
+			'nom' => $Exnom,'prenom' => $Exprenom, 'fonction' => $Exfonction),array( 'id' => $ExidExposant)
+			);
+			
+			$result=$wpdb->update( 
+				'ste_connexion', 
+				array('email' => $Exemail,'password' =>$ExPassword)
+			,array( 'userid' => $ExidVisiteur,'role'=>2)
 			);
 		}
 	

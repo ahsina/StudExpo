@@ -89,9 +89,9 @@ $(document).ready(function() {
 <?php
 		global $wpdb;
 		$listOfUsers = $wpdb->get_results(
-		"SELECT cl.id,ci.label,cl.nom,cl.prenom,cl.nomAsso,cl.numasso,cl.email,cl.tel tel,cl.ville ville, cl.CodePostal codePostal,cl.Adresse adresse
-		FROM ste_Visiteurs cl, ste_civilite ci 
-		WHERE cl.civilite=ci.id");
+		"SELECT cl.id,ci.label,cl.nom,cl.prenom,cl.nomAsso,cl.numasso,c.email,cl.tel tel,cl.ville ville, cl.CodePostal codePostal,cl.Adresse adresse
+		FROM ste_Visiteurs cl, ste_civilite ci ,ste_connexion c
+		WHERE cl.civilite=ci.id and cl.id=c.userid");
 		foreach ($listOfUsers as $Visiteur){
 			?>
 			<tr>

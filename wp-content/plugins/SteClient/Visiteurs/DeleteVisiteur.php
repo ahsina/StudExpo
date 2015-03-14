@@ -5,6 +5,7 @@
 			global $wpdb;
 			foreach ($UsersToDelete as $u){ 
 			$wpdb->delete( 'ste_Visiteurs', array( 'id' => $u));
+			$wpdb->delete( 'ste_connexion', array( 'userid' => $u,'role'=>1));
 			}
 			///Notify: user succesfully deleted
 		}
