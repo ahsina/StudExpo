@@ -15,6 +15,7 @@ get_header(); ?>
 				<div class="container">
 					<h2>Insere ton texte ma gueule !</h2>
 					<p>j'ai dit ton texte ma gueule !</p>
+					<?php echo get_content(); ?>
 				</div>
 			</div>
 		</div>
