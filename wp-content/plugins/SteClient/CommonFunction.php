@@ -181,20 +181,22 @@ function logout(){
 	}
 }
 logout();
-if(!CheckLogin()){	
-	if(!empty($_POST['email']) && !empty($_POST['password'])){
-		if(Login()){
-			echo 'ok';
+function connect(){
+	if(!CheckLogin()){	
+		if(!empty($_POST['email']) && !empty($_POST['password'])){
+			if(Login()){
+				echo 'ok';
+			}
+			else{
+				echo 'notok';
+			}
 		}
 		else{
-			echo 'notok';
+			echo 'bad credentiel';
 		}
 	}
 	else{
-		echo 'bad credentiel';
+		echo "you are connected";
 	}
-}
-else{
-	echo "you are connected";
 }
 ?>
