@@ -1,22 +1,17 @@
 <?php
 function getListCivilites($id){
-?>
-<select name="ListCivilites">
-<?php
+
 global $wpdb;
-		$listOfCivilites = $wpdb->get_results(
-		"SELECT ci.id,ci.label
-		FROM ste_civilite ci");
-		foreach ($listOfCivilites as $civilite){
-			$Selected="";
-			if(!empty($id) && $id==$civilite->id){
-				$Selected="selected";
-			}
-			echo  "<option value=\"".$civilite->id."\"".$Selected.">".$civilite->label."</option> \n";
+	$listOfCivilites = $wpdb->get_results(
+	"SELECT ci.id,ci.label
+	FROM ste_civilite ci");
+	foreach ($listOfCivilites as $civilite){
+		$Selected="";
+		if(!empty($id) && $id==$civilite->id){
+			$Selected="selected";
 		}
-?>
-</select></br>
-<?php
+		echo  "<option value=\"".$civilite->id."\"".$Selected.">".$civilite->label."</option> \n";
+	}
 }
 
 function getListPays($id){

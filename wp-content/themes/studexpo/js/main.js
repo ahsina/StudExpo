@@ -726,6 +726,8 @@ jQuery(function ($) {
 
   });
 
+  $('.selectpicker').selectpicker();
+
 });
 
 

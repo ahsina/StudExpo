@@ -2773,6 +2773,61 @@ a.thumbnail.active {
   font-size: 40px;
   content: "x";
 }
+.form-style {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+}
+@media (max-width: 560px) {
+  .form-style .bloc-form {
+    float: left;
+    width: 100% !important;
+    margin-left: 0;
+    display: block;
+  }
+  .form-style .bloc-form.pair-bloc {
+    margin-right: 0%;
+  }
+}
+.form-style .bloc-form {
+  float: left;
+  width: 48%;
+  margin-left: 0;
+  display: block;
+}
+.form-style .bloc-form.pair-bloc {
+  margin-right: 4%;
+}
+.form-style .bloc-form label {
+  font-family: "Drugs";
+  font-weight: bold;
+}
+.form-style .bloc-form-civilite {
+  margin-bottom: 20px;
+  display: block;
+}
+.form-style .bloc-form-civilite label {
+  font-family: "Drugs";
+  font-weight: bold;
+}
+.form-style .bloc-form-validate {
+  margin-bottom: 20px;
+  display: block;
+  width: 100%;
+  float: left;
+}
+.form-style input[type=text],
+.form-style input[type=password] {
+  width: 100%;
+  display: inline-block;
+  padding: 10px 10px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  margin-bottom: 20px;
+  font-family: "Drugs";
+  color: black;
+}
 @font-face {
   font-family: 'HelveticaNeueLTPro-Roman';
   src: url('../fonts/Helvetica/HelveticaNeueLTPro-Roman.eot');
@@ -2822,8 +2877,10 @@ a {
   text-decoration: none;
 }
 a:active,
-a:hover {
-  outline: 0!important;
+a:hover,
+input:focus,
+input:active {
+  outline: none !important;
 }
 /*HEADER*/
 @media (max-width: 980px) {
@@ -2908,13 +2965,16 @@ a:hover {
 }
 @media (max-width: 980px) {
   #header .main-menu .container .nav-menu {
-    margin-top: 50px !important;
+    margin-top: -13px !important;
     position: absolute !important;
+    right: 0;
+    margin-left: 0px !important;
+    background: white;
   }
 }
 #header .main-menu .container .nav-menu {
   display: inline-block;
-  margin-top: -40px;
+  margin-top: -48px;
   float: right;
   font-size: 17px;
   margin-left: 273px;
@@ -3177,6 +3237,7 @@ a:hover {
   height: auto;
   padding: 60px 20px;
   background: #ececec;
+  margin-bottom: 30px;
 }
 @media (max-width: 1030px) {
   .header-page .title {
@@ -3220,6 +3281,7 @@ a:hover {
   margin: 0 auto;
   padding-top: 20px;
   text-align: justify;
+  padding: 10px 15px;
 }
 .content-inter .container-content .container h2 {
   color: #6fa0d5;
@@ -3227,6 +3289,18 @@ a:hover {
   font-weight: bold;
   font-family: "Drugs";
   margin-top: 0px;
+}
+/*Button*/
+button.valider {
+  padding: 10px 20px;
+  color: white;
+  background: #6fa0d5;
+  font-weight: bold;
+  font-family: "Drugs";
+}
+button.valider:hover {
+  background: #f28f2f;
+  color: white;
 }
 .page-index__slider {
   height: 570px;
