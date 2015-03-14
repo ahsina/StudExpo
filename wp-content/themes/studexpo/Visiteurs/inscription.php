@@ -5,6 +5,7 @@ Template Name: VisiteursInscription
 
 
 get_header();
+
 function addNewVisteur(){
 		if (empty($_POST['idV'])) {
 			$NUcivilite = $_POST['ListCivilites'];
@@ -50,61 +51,80 @@ function addNewVisteur(){
 	
 	addNewVisteur();
 ?>
-<div style="margin-top:300px;display:block;height:auto;width:100%;">
-<form method="post" name="Modify-Visiteur">
-<div class="wrap">
-	<input type="hidden" name="idV" value="<?php if(!empty($idVisiteur)){ echo $idVisiteur;};?>"/>
-	<div>
-		<label>Civilite</label>
-		<?php getListCivilites(null);?>
-	</div>
-	
-	<div style="width:100%">
-		<label>Nom</label>
-		<input type="text" name="nom" value=""/>
 
-		<label>Pr&eacute;nom</label>
-		<input type="text" name="prenom" value=""/>
+
+<div class="page page-index">
+	<div class="header-page">
+		<div class="title">
+			<h1><?php echo get_the_title(); ?></h1>
+		</div>
 	</div>
-	<div style="width:100%">
-		<label>Libelle de l'asso</label>
-		<input type="text" name="nomAsso" value=""/>
+	<div class="content-inter">
+		<div class="container-content">
+			<div class="container">
+				<h2>Insere ton texte ma gueule !</h2>
+				<p>j'ai dit ton texte ma gueule !</p>
+				<form method="post" name="Modify-Visiteur">
+					<div class="wrap">
+						<input type="hidden" name="idV" value="<?php if(!empty($idVisiteur)){ echo $idVisiteur;};?>"/>
+						<div>
+							<label>Civilite</label>
+							<?php getListCivilites(null);?>
+						</div>
 						
-		<label>N° de l'asso</label>
-		<input type="text" name="numAsso" value=""/>
+						<div style="width:100%">
+							<label>Nom</label>
+							<input type="text" name="nom" value=""/>
+
+							<label>Pr&eacute;nom</label>
+							<input type="text" name="prenom" value=""/>
+						</div>
+						<div style="width:100%">
+							<label>Libelle de l'asso</label>
+							<input type="text" name="nomAsso" value=""/>
+											
+							<label>N° de l'asso</label>
+							<input type="text" name="numAsso" value=""/>
+						</div>
+						
+						<div>
+							<label>Email</label>
+							<input type="text" name="email" value=""/>
+												
+							<label>Tel</label>
+							<input type="text" name="tel" value=""/>			
+						</div>
+						<div style="width:100%">
+						<label>Adresse</label>
+							<input type="text" name="adresse" value=""/>
+							<label>Ville</label>
+							<input type="text" name="ville" value=""/>
+						</div>
+						<div>
+							<label>codePostal</label>
+							<input type="text" name="codePostal" value=""/>
+						</div>
+						<div>
+							<label>Mot de passe</label>
+								<input type="password" name="password" 	value=""/>
+						</div>
+						<div>
+							<label>Confirmation</label>
+								<input type="password" name="confirmation" 	value=""/>
+						</div>
+					<div class="wrap">
+						<input type="submit" value="Enregistrer" name="user-update" class="button-primary"/>
+						<a href="#" class="button-secondary"> Annuler</a>
+					</div>
+				</form>
+			</div>
+		</div>
 	</div>
-	
-	<div>
-		<label>Email</label>
-		<input type="text" name="email" value=""/>
-							
-		<label>Tel</label>
-		<input type="text" name="tel" value=""/>			
-	</div>
-	<div style="width:100%">
-	<label>Adresse</label>
-		<input type="text" name="adresse" value=""/>
-		<label>Ville</label>
-		<input type="text" name="ville" value=""/>
-	</div>
-	<div>
-		<label>codePostal</label>
-		<input type="text" name="codePostal" value=""/>
-	</div>
-	<div>
-		<label>Mot de passe</label>
-			<input type="password" name="password" 	value=""/>
-	</div>
-	<div>
-		<label>Confirmation</label>
-			<input type="password" name="confirmation" 	value=""/>
-	</div>
-<div class="wrap">
-<input type="submit" value="Enregistrer" name="user-update" class="button-primary"/>
-<a href="#" class="button-secondary"> Annuler</a>
+	<!-- GALLERY -->
 </div>
-</form>
-</div>
+
+
+
 <?php
 get_footer();
 ?>

@@ -52,75 +52,95 @@ function addNewExposant(){
 	addNewExposant();
 	
 ?>
-<div style="margin-top:300px;display:block;height:auto;width:100%;">
-<form method="post" name="Modify-Exposant">
-<div class="wrap">
-	<input type="hidden" name="idV" value="<?php if(!empty($idExposant)){ echo $idExposant;};?>"/>
-	<div>
-		
-	</div>
 
-	<div style="width:100%">
-		<label>Libelle de l'entreprise</label>
-		<input type="text" name="libelleEntreprise" 
-		value=""/>
 
-		<label>N° de SIRET</label>
-		<input type="text" name="NumSiret" 
-		value=""/>
+<div class="page page-index">
+	<div class="header-page">
+		<div class="title">
+			<h1><?php echo get_the_title(); ?></h1>
+		</div>
 	</div>
-	<div style="width:100%">
-		<label>Secteur d'activité</label>
-		<input type="text" name="SecteurActivite" 
-		value=""/>
-		<label>Adresse du siege</label>
-		<input type="text" name="AdresseSiege" value=""/>
-	</div>
+	<div class="content-inter">
+		<div class="container-content">
+			<div class="container">
+				<h2>Insere ton texte ma gueule !</h2>
+				<p>j'ai dit ton texte ma gueule !</p>
+				<form method="post" name="Modify-Exposant">
+					<div class="wrap">
+						<input type="hidden" name="idV" value="<?php if(!empty($idExposant)){ echo $idExposant;};?>"/>
+						<div>
+							
+						</div>
 
-	<div>
-		<label>Code postal</label>
-			<input type="text" name="CodePostal" value=""/>
+						<div style="width:100%">
+							<label>Libelle de l'entreprise</label>
+							<input type="text" name="libelleEntreprise" 
+							value=""/>
+
+							<label>N° de SIRET</label>
+							<input type="text" name="NumSiret" 
+							value=""/>
+						</div>
+						<div style="width:100%">
+							<label>Secteur d'activité</label>
+							<input type="text" name="SecteurActivite" 
+							value=""/>
+							<label>Adresse du siege</label>
+							<input type="text" name="AdresseSiege" value=""/>
+						</div>
+
+						<div>
+							<label>Code postal</label>
+								<input type="text" name="CodePostal" value=""/>
+												
+							<label>Ville</label>
+							<input type="text" name="Ville" value=""/>
 							
-		<label>Ville</label>
-		<input type="text" name="Ville" value=""/>
-		
-	</div>
-	<div style="width:100%">
-		<label>Civilite</label>
-		<?php 
-		getListCivilites(null);
-		?>
-		
-		<label>Nom</label>
-		<input type="text" name="nom" value=""/>
+						</div>
+						<div style="width:100%">
+							<label>Civilite</label>
+							<?php 
+							getListCivilites(null);
+							?>
 							
+							<label>Nom</label>
+							<input type="text" name="nom" value=""/>
+												
+						</div>
+						<div>						
+							<label>Prenom</label>
+							<input type="text" name="prenom" value=""/>
+												
+							<label>Fonction</label>
+							<input type="text" name="fonction" value=""/>
+						</div>
+						<div>
+							<label>Email</label>
+							<input type="text" name="email" value=""/>
+						</div>
+						<div>
+							<label>Mot de passe</label>
+								<input type="password" name="password" 	value=""/>
+						</div>
+						<div>
+							<label>Confirmation</label>
+								<input type="password" name="confirmation" 	value=""/>
+						</div>
+						
+					<div class="wrap">
+						<input type="submit" value="Enregistrer" name="user-update" class="button-primary"/>
+						<a href="#" class="button-secondary"> Annuler</a>
+					</div>
+				</form>
+			</div>
+		</div>
 	</div>
-	<div>						
-		<label>Prenom</label>
-		<input type="text" name="prenom" value=""/>
-							
-		<label>Fonction</label>
-		<input type="text" name="fonction" value=""/>
-	</div>
-	<div>
-		<label>Email</label>
-		<input type="text" name="email" value=""/>
-	</div>
-	<div>
-		<label>Mot de passe</label>
-			<input type="password" name="password" 	value=""/>
-	</div>
-	<div>
-		<label>Confirmation</label>
-			<input type="password" name="confirmation" 	value=""/>
-	</div>
-	
-<div class="wrap">
-<input type="submit" value="Enregistrer" name="user-update" class="button-primary"/>
-<a href="#" class="button-secondary"> Annuler</a>
+	<!-- GALLERY -->
 </div>
-</form>
-</div>
+
+
+
+
 <?php
 get_footer();
 ?>

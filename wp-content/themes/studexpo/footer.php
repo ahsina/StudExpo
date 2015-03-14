@@ -13,17 +13,18 @@
 				<div class="col-md-3 liste-pages-footer middle">
 					<h4>A propos</h4>
 					<ul>
-						<li><a href="">Qui sommes nous ?</a></li>
-						<li><a href="">Notre équipe</a></li>
-						<li><a href="">Témoignages</a></li>
-						<li><a href="">Contact</a></li>
+						<li><a href="?page_id=27">Qui sommes nous ?</a></li>
+						<li><a href="?page_id=29">Notre équipe</a></li>
+						<li><a href="?page_id=31">Témoignages</a></li>
+						<li><a href="?page_id=23">Contact</a></li>
 					</ul>
 				</div>
 				<div class="col-md-3 liste-pages-footer">
 					<h4>Help</h4>
 					<ul>
-						<li><a href="">Mentions légales</a></li>
-						<li><a href="">Site Map</a></li>
+						<li><a href="?page_id=39">Infos pratiques</a></li>
+						<li><a href="?page_id=25">Mentions légales</a></li>
+						<li><a target="_blank" href="?page_id=13">Site Map</a></li>
 					</ul>
 				</div>
 			</div>

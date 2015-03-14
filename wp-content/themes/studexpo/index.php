@@ -49,7 +49,7 @@ get_header(); ?>
 			<div class="container">
 				<div class="container-bloc row">
 					<div class="index-bloc span">
-						<a href="#">
+						<a href="?page_id=13">
 							<div class="icon">
 								<i class="fa fa-university"></i>
 							</div>
@@ -59,7 +59,7 @@ get_header(); ?>
 						</a>
 					</div>
 					<div class="index-bloc span2">
-						<a href="#">
+						<a href="?page_id=19">
 							<div class="icon">
 								<i class="fa fa-graduation-cap"></i>
 							</div>
@@ -69,7 +69,7 @@ get_header(); ?>
 						</a>
 					</div>
 					<div class="index-bloc span2">
-						<a href="#">
+						<a href="?page_id=17">
 							<div class="icon">
 								<i class="fa fa-trophy"></i>
 							</div>
@@ -79,7 +79,7 @@ get_header(); ?>
 						</a>
 					</div>
 					<div class="index-bloc span2">
-						<a href="#">
+						<a href="?page_id=15">
 							<div class="icon">
 								<i class="fa fa-briefcase"></i>
 							</div>

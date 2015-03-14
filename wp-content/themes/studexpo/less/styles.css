@@ -3166,6 +3166,68 @@ a:hover {
 .slider .slider__prev.slider__next .icon {
   left: 1px;
 }
+/*Header page intermédiaire*/
+@media (max-width: 1030px) {
+  .header-page {
+    padding: 30px 15px;
+  }
+}
+.header-page {
+  width: 100%;
+  height: auto;
+  padding: 60px 20px;
+  background: #ececec;
+}
+@media (max-width: 1030px) {
+  .header-page .title {
+    width: 100% !important;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+}
+.header-page .title {
+  display: block;
+  width: 1000px;
+  height: auto;
+  margin: 0 auto;
+}
+.header-page .title h1 {
+  font-size: 36px;
+  font-family: 'Drugs';
+  text-align: center;
+  font-weight: bold;
+}
+/*Content page intermédiaire*/
+.content-inter {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+.content-inter .container-content {
+  width: 100%;
+  height: auto;
+  padding-bottom: 20px;
+  background: #fff;
+}
+@media (max-width: 1030px) {
+  .content-inter .container-content .container {
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+}
+.content-inter .container-content .container {
+  width: 1000px;
+  margin: 0 auto;
+  padding-top: 20px;
+  text-align: justify;
+}
+.content-inter .container-content .container h2 {
+  color: #6fa0d5;
+  font-size: 28px;
+  font-weight: bold;
+  font-family: "Drugs";
+  margin-top: 0px;
+}
 .page-index__slider {
   height: 570px;
 }

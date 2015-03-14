@@ -4,8 +4,8 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" href="img/icon/favicon-sutdexpo.png" type="image/x-icon">
-	<link rel="icon" href="img/icon/favicon-sutdexpo.png" sizes="32x32">
+	<link rel="shortcut icon" href="wp-content/themes/studexpo/img/icon/favicon-sutdexpo.png" type="image/x-icon">
+	<link rel="icon" href="wp-content/themes/studexpo/img/icon/favicon-sutdexpo.png" sizes="32x32">
 
 	<title>StudExpo</title>
 
@@ -69,12 +69,12 @@
 				<div class="nav-menu">
 					<nav class="nav-collapse">
 						<ul>
-							<li><a href="">Le salon</a></li>
-							<li><a href="">Exposer</a></li>
-							<li><a href="">Visiter</a></li>
-							<li><a href="">Concours</a></li>
-							<li><a href="">Conférences</a></li>
-							<li><a href="">Partenaires</a></li>
+							<li><a href="index.php">Le salon</a></li>
+							<li><a href="?page_id=13">Exposer</a></li>
+							<li><a href="?page_id=19">Visiter</a></li>
+							<li><a href="?page_id=17">Concours</a></li>
+							<li><a href="?page_id=21">Conférences</a></li>
+							<li><a href="?page_id=15">Partenaires</a></li>
 						</ul>
 					</nav>
 				</div>
