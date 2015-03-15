@@ -50,12 +50,12 @@
 					echo "
 						<ul class='nav navbar-nav navbar-right pull-right'>
 							<li>
-								<a href='modal-sign-in.php' class='fancyBoxTitle fancybox.ajax' ref='signin' title='Se connecter'>
+								<a href='wp-content/themes/studexpo/modal-sign-in.php' class='fancyBoxTitle fancybox.ajax' ref='signin' title='Se connecter'>
 									<i class='fa fa-user'></i> Connexion
 								</a>
 							</li>
 							<li>
-								<a href='#' title='S'inscrire'>
+								<a href='wp-content/themes/studexpo/modal-inscription.php' class='fancyBoxTitle fancybox.ajax' ref='inscription' title='S'inscrire'>
 									<i class='fa fa-sign-in'></i> Inscription
 								</a>
 							</li>

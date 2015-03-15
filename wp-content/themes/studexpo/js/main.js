@@ -441,7 +441,10 @@ jQuery(function ($) {
 			nH = 420;
 		}
 		else if (cRef == 'signin') {
-			cTitre = '<h4>' + $(this).attr('title') + '</h4>';
+			nW = 300;
+			nH = 340;
+		}
+		else if (cRef == 'inscription') {
 			nW = 300;
 			nH = 340;
 		}
