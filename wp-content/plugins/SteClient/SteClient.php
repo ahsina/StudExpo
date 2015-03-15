@@ -23,7 +23,7 @@ include 'Home.php';
 include 'CommonFunction.php';
 add_action('admin_menu','steExposant_admin_actions');
 function steExposant_admin_actions(){
-	add_menu_page('Gestion des clients','Gestion des clients','manage_options',__FILE__,'getHomePageClients','', '', 1 );
+	add_menu_page('Gestion des clients','Gestion des clients','manage_options',__FILE__,'getHomePageClients','', 6 ); 
 	wp_enqueue_script('utils_js', plugins_url('/JS/utils.js',__FILE__) );
 	wp_enqueue_script('TableToolsJquery', plugins_url('JS/DataTables-1.10.5/media/js/jquery.js',__FILE__), array(), '2', true );
 	wp_enqueue_script('DataTables_js',plugins_url('JS/DataTables-1.10.5/media/js/jquery.dataTables.min.js',__FILE__) , array(), '1', true);

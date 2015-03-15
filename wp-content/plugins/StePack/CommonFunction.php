@@ -1,17 +1,22 @@
 <?php
 function getListCivilites($id){
-
+?>
+<select name="ListCivilites">
+<?php
 global $wpdb;
-	$listOfCivilites = $wpdb->get_results(
-	"SELECT ci.id,ci.label
-	FROM ste_civilite ci");
-	foreach ($listOfCivilites as $civilite){
-		$Selected="";
-		if(!empty($id) && $id==$civilite->id){
-			$Selected="selected";
+		$listOfCivilites = $wpdb->get_results(
+		"SELECT ci.id,ci.label
+		FROM ste_civilite ci");
+		foreach ($listOfCivilites as $civilite){
+			$Selected="";
+			if(!empty($id) && $id==$civilite->id){
+				$Selected="selected";
+			}
+			echo  "<option value=\"".$civilite->id."\"".$Selected.">".$civilite->label."</option> \n";
 		}
-		echo  "<option value=\"".$civilite->id."\"".$Selected.">".$civilite->label."</option> \n";
-	}
+?>
+</select></br>
+<?php
 }
 
 function getListPays($id){
@@ -93,21 +98,6 @@ global $wpdb;
 ?>
 </select></br>
 <?php
-}
-
-function getListCategorieForPack($id){
-
-global $wpdb;
-		$listcategorie = $wpdb->get_results(
-		"SELECT id,libelle
-		FROM ste_categorie");
-		foreach ($listcategorie as $categorie){
-			$Selected="";
-			if(!empty($id) && $id==$categorie->id){
-				$Selected="selected";
-			}
-			echo  "<option value=\"".$categorie->id."\"".$Selected.">".$categorie->libelle."</option> \n";
-		}
 }
 
 function EncryptPassword($strPlainText) {
@@ -209,6 +199,4 @@ function connect(){
 		echo "you are connected";
 	}
 }
-
-
 ?>
