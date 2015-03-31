@@ -61,12 +61,21 @@ function addNewVisteur(){
 		<div class="content-inter">
 			<div class="container-content">
 				<div class="container">
-					<h2>S'inscrire pour visiter le salon</h2>
+					<div class="clear"></div>
 					<p>
-						<?php if ( have_posts() ) : while( have_posts() ) : the_post();
-				     the_content();
-					endwhile; endif; ?>
+
+						<?php 
+
+						if ( have_posts() ) : while( have_posts() ) : the_post();
+					    the_content();
+						endwhile; endif;
+						
+						?>
+
 					</p>
+					<h2>S'inscrire pour visiter le salon</h2>
+					
+					
 					<div class="form-style">
 						<form method="post" name="Modify-Visiteur">
 							<div class="wrap">
