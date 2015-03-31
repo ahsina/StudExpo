@@ -64,3 +64,16 @@ function ShowDiv(divID){
 	$(divID).show();
 	return false;
 }
+
+function getSelectedItemList(selectName){
+	var foo = []; 
+	$(selectName+' :selected').each(function(i, selected){ 
+	  foo[i] = $(selected).text(); 
+	});
+}
+function removeSelectedItemList(selectName){
+var selectid=selectName+" :selected";
+	$(selectid).each(function(i, selectedElement) {
+		selectedElement.remove();
+	});
+}

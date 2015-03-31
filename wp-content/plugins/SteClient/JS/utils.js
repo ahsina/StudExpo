@@ -64,3 +64,16 @@ function ShowDiv(divID){
 	$(divID).show();
 	return false;
 }
+function getSelectedItemList(selectName,SelectWhereAdd){
+var selectid=selectName+" :selected";
+	$(selectid).each(function(i, selectedElement) {
+		$(SelectWhereAdd).append('<option value=\"'+$(selectedElement).val()+'\">'+$(selectedElement).text()+'</option>');
+	});
+}
+
+function removeSelectedItemList(selectName){
+var selectid=selectName+" :selected";
+	$(selectid).each(function(i, selectedElement) {
+		selectedElement.remove();
+	});
+}

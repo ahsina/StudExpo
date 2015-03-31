@@ -28,14 +28,14 @@ function stePacks_admin_actions(){
 	wp_enqueue_script('DataTables_js',plugins_url('JS/DataTables-1.10.5/media/js/jquery.dataTables.min.js',__FILE__) , array(), '1', true);
 	//wp_enqueue_script('ZeroClip_js',plugins_url('JS/TableTools/media/ZeroClipboard/ZeroClipboard.js',__FILE__) , array(), '1', true);
 	wp_enqueue_script('TableTools_js', plugins_url('JS/DataTables-1.10.5/extensions/TableTools/js/dataTables.tableTools.min.js',__FILE__), array(), '1', true );
-	//add_submenu_page(__FILE__, 'Gestion des packs', 'Gestion des packs', 'manage_options', __FILE__ .'_Pack', 'Pack_SubMenu');
+	add_submenu_page(__FILE__, 'Gestion des packs', 'Gestion des packs', 'manage_options', __FILE__ .'_Pack', 'Pack_SubMenu');
 	add_submenu_page(__FILE__, 'Gestion des categories', 'Gestion des categories', 'manage_options', __FILE__ .'_Categorie', 'Categorie_SubMenu');
 
 	}
 	
 function Pack_SubMenu(){
-		include 'categorie/ListOfVisiteurs.php';
-		getListOfVisiteursSTE();
+		include 'Pack/ListOfPacks.php';
+		getListOfPackSTE();
 
 }
 

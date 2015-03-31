@@ -11,8 +11,8 @@ function addNewExposant(){
 			$NUNumSiret = $_POST['NumSiret'];
 			$NUSecteurActivite = $_POST['SecteurActivite'];
 			$NUAdresseSiege = $_POST['AdresseSiege'];
-			$NUCodePostal = $_POST['CodePostal'];
-			$NUVille=$_POST['Ville'];
+			$NUCodePostal = $_POST['codePostal'];
+			$NUVille=$_POST['ville'];
 			$NUCivilite=$_POST['ListCivilites'];
 			$NUnom = $_POST['nom'];
 			$NUprenom = $_POST['prenom'];
@@ -63,7 +63,9 @@ function addNewExposant(){
 			<div class="container-content">
 				<div class="container">
 					<h2>S'inscrire pour exposer dans le salon</h2>
-					<p>Inserer le texte ici !</p>
+					<p><?php if ( have_posts() ) : while( have_posts() ) : the_post();
+     the_content();
+endwhile; endif; ?></p>
 					<div class="form-style">
 						<form method="post" name="Modify-Visiteur">
 							<div class="wrap">
@@ -125,7 +127,7 @@ function addNewExposant(){
 
 								<div class="bloc-form">
 									<label>Adresse du siège</label><br />
-									<input type="text" name="adresse" value=""/>
+									<input type="text" name="AdresseSiege" value=""/>
 								</div>
 
 								<div class="bloc-form pair-bloc">
@@ -140,7 +142,7 @@ function addNewExposant(){
 
 								
 								<div class="bloc-form-validate">
-									<button type="submit" name="user-update" class="btn button-primary valider">Valider</button>
+									<button type="submit" name="user-Add" class="btn button-primary valider">Valider</button>
 								</div>
 							</div>
 						</form>
