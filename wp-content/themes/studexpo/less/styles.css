@@ -2997,7 +2997,7 @@ a.thumbnail.active {
   float: right !important;
   color: #6fa0d5;
   /* Edit this to change the icon color */
-  font-family: "responsivenav", sans-serif;
+  font-family: "Drugs";
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -3016,6 +3016,16 @@ a.thumbnail.active {
 .nav-toggle.active::before {
   font-size: 40px;
   content: "x";
+}
+.js-nav-active .nav-menu {
+  margin-top: 55px !important;
+  background: white;
+}
+.js-nav-active .nav-menu ul li:first-child {
+  margin-top: 15px;
+}
+.js-nav-active .nav-menu ul li {
+  text-align: center;
 }
 .form-style {
   display: block;
@@ -3209,16 +3219,19 @@ input:active {
 }
 @media (max-width: 980px) {
   #header .main-menu .container .nav-menu {
-    margin-top: -13px !important;
     position: absolute !important;
     right: 0;
     margin-left: 0px !important;
-    background: white;
+  }
+}
+@media (min-width: 981px) {
+  #header .main-menu .container .nav-menu {
+    margin-top: -48px !important;
   }
 }
 #header .main-menu .container .nav-menu {
   display: inline-block;
-  margin-top: -48px;
+  margin-top: -20px;
   float: right;
   font-size: 17px;
   margin-left: 273px;
@@ -3758,6 +3771,15 @@ button.valider:hover {
     width: 100% !important;
   }
 }
+@media (min-width: 538px) and (max-width: 1030px) {
+  .introduction .container .container-bloc .index-bloc {
+    width: 48% !important;
+  }
+  .introduction .container .container-bloc .index-bloc.pair {
+    margin-right: 0px !important;
+    float: right!important;
+  }
+}
 .introduction .container .container-bloc .index-bloc {
   width: 235px;
   height: 300px;
@@ -3968,4 +3990,23 @@ button.valider:hover {
 }
 .last-container .last-container-content .center .container-skills .bloc-skills:first-child {
   margin-left: 0px;
+}
+.trophy-container {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  height: auto;
+  margin-top: 20px;
+}
+.trophy-container .logotrophy {
+  width: 48%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+}
+.trophy-container .detail-trophy {
+  width: 48%;
+  float: left;
+  display: inline-block;
+  margin-top: 50px;
 }
