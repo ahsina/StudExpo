@@ -1,6 +1,6 @@
 <?php 
 /*
-Template Name: VisiteursInscription
+Template Name: test
 */
 
 
