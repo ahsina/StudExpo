@@ -16,7 +16,7 @@
 						<li><a href="?page_id=27">Qui sommes nous ?</a></li>
 						<li><a href="?page_id=29">Notre équipe</a></li>
 						<li><a href="?page_id=31">Témoignages</a></li>
-						<li><a href="?page_id=23">Contact</a></li>
+						<li><a href="?page_id=20">Contact</a></li>
 					</ul>
 				</div>
 				<div class="col-md-3 liste-pages-footer">
