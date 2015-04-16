@@ -174,7 +174,7 @@ function CheckLoginInDB($email,$password){
 
 function CheckLogin()
 {
-     session_start();
+     //session_start();
       
      if(empty($_SESSION['connexionID']))
      {

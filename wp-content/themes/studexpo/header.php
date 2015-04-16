@@ -93,11 +93,11 @@
 					<nav class="nav-collapse">
 						<ul>
 							<li><a href="index.php">Le salon</a></li>
-							<li><a href="?page_id=13">Exposer</a></li>
-							<li><a href="?page_id=19">Visiter</a></li>
-							<li><a href="?page_id=17">Concours</a></li>
-							<li><a href="?page_id=21">Conférences</a></li>
-							<li><a href="?page_id=15">Partenaires</a></li>
+							<li><a href="?page_id=12">Exposer</a></li>
+							<li><a href="?page_id=10">Visiter</a></li>
+							<li><a href="?page_id=14">Concours</a></li>
+							<li><a href="?page_id=16">Conférences</a></li>
+							<li><a href="?page_id=18">Partenaires</a></li>
 						</ul>
 					</nav>
 				</div>

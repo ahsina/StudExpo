@@ -2,7 +2,7 @@
 	<div class="modal-inscription">
 		<div class="row">
 			<div class="modal-bloc-inscription">
-				<a href="?page_id=19">
+				<a href="?page_id=10">
 					<div class="icon">
 						<i class="fa fa-graduation-cap"></i>
 					</div>
@@ -10,7 +10,7 @@
 				</a>
 			</div>
 			<div class="modal-bloc-inscription">
-				<a href="?page_id=13">
+				<a href="?page_id=12">
 					<div class="icon">
 						<i class="fa fa-university"></i>
 					</div>

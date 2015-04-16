@@ -3400,20 +3400,18 @@ input:active {
   height: 100%;
 }
 .swiper-slide__title h4 {
-  color: #f28f2f;
+  color: #FFF;
   font-size: 60px;
   position: relative;
   vertical-align: middle;
   top: 80px;
   text-align: center;
-  font-family: 'Drugs' !important;
-  text-shadow: 1px 1px 1px grey;
 }
 .swiper-slide__title h4 small {
-  color: #6fa0d5;
+  color: #FFF;
   display: block;
   font-weight: normal;
-  font-size: 30px;
+  font-size: 18px;
   margin-top: 10px;
 }
 .swiper-pagination {
@@ -3610,11 +3608,11 @@ button.valider:hover {
   margin-bottom: 15px;
 }
 .page-index__slider {
-  height: 360px;
+  height: 570px;
 }
 .page-index__slider .swiper-slide {
   background-position: 50% 50%;
-  height: 360px !important;
+  height: 570px !important;
 }
 .page-index__promos {
   background-color: #e5e5e5;
@@ -4011,41 +4009,4 @@ button.valider:hover {
   float: left;
   display: inline-block;
   margin-top: 50px;
-}
-.texte-concours {
-  font-family: 'Drugs' !important;
-}
-@media (max-width: 400px) {
-  .texte-concours .title {
-    width: 100%!important;
-  }
-  .texte-concours h2 {
-    font-size: 24px !important;
-  }
-}
-.texte-concours .title {
-  display: inline-block;
-  width: 400px;
-  text-align: right;
-  margin-bottom: 30px;
-  border-bottom: 5px #f28f2f solid;
-}
-.texte-concours h2 {
-  font-size: 30px !important;
-  text-align: right;
-}
-.texte-concours ul.why-p span {
-  color: #f28f2f;
-}
-.texte-concours ul.why-p li {
-  color: grey;
-  font-size: 16px;
-}
-.texte-concours h3.scn-title {
-  color: #f28f2f;
-  text-align: center;
-}
-.texte-concours h3.frst-title {
-  color: #6fa0d5;
-  text-align: center;
 }

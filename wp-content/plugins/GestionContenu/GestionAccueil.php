@@ -3,6 +3,4 @@ function importImagesSlider(){
 
 }
 include 'slider.php';
-
-
 ?>
