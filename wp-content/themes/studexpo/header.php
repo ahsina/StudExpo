@@ -49,11 +49,11 @@
 				if(!CheckLogin()) {
 					echo "
 						<ul class='nav navbar-nav navbar-right pull-right'>
-							<li>
+							<!--<li>
 								<a href='wp-content/themes/studexpo/modal-sign-in.php' class='fancyBoxTitle fancybox.ajax' ref='signin' title='Se connecter'>
 									<i class='fa fa-user'></i> Connexion
 								</a>
-							</li>
+							</li>-->
 							<li>
 								<a href='wp-content/themes/studexpo/modal-inscription.php' class='fancyBoxTitle fancybox.ajax' ref='inscription' title='S'inscrire'>
 									<i class='fa fa-sign-in'></i> Inscription

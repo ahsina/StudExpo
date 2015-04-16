@@ -10,19 +10,32 @@ get_header(); ?>
 			<a href="" class="btn btn-default slider__next"><i class="fa fa-forward"></i></a>
 			<a href="" class="btn btn-default slider__prev"><i class="fa fa-backward"></i></a>
 			<div class="swiper-wrapper">
-				<div style="background-image: url(img/temp/city-wallpaper-3.png)" data-title="Explorer New Waters" data-description="It's not a shower. It's an experience." class="swiper-slide">
-					<a href="" class="swiper-slide__link">
+				<div style="background-image: url(./wp-content/themes/studexpo/img/temp/Concours.jpg)" data-title="Explorer New Waters" data-description="It's not a shower. It's an experience." class="swiper-slide">
+					<a href="?page_id=14" class="swiper-slide__link">
 						<div class="swiper-slide__title">
-							<h4>Vestibulum<small>Lorem ipsum dolor sit amet gros.</small></h4>
+							<h4>Concours STUD'TROPHY<small>Mettez votre créativité au service de vos étudiants</small></h4>
 						</div>
 					</a>
 				</div>
-				<div style="background-image: url(img/temp/city-wallpaper-3.png)" class="swiper-slide">
-					<a href="" class="swiper-slide__link"></a>
+				<div style="background-image: url(./wp-content/themes/studexpo/img/temp/Exposer.jpg)" class="swiper-slide">
+					<a href="?page_id=12" class="swiper-slide__link">
+						<div class="swiper-slide__title">
+						<h4>Devenez exposant<small>Exposez à un événement inédit pour rencontrer toutes les associations étudiantes</small></h4>
+						</div>
+					</a>
 				</div>
-				<div style="background-image: url(img/temp/city-wallpaper-3.png)" class="swiper-slide">
-					<a href="" class="swiper-slide__link"></a>
+				<div style="background-image: url(./wp-content/themes/studexpo/img/temp/Visiteurs.jpg)" class="swiper-slide">
+					<a href=?page_id=10"" class="swiper-slide__link">
+					<div class="swiper-slide__title">
+						<h4>Venez rencontrer vos fournisseurs<small>Participez à l'inauguration du 1er événement dédié aux associations étudiantes </small></h4>
+					</div>
+					</a>
 				</div>
+				<div style="background-image: url(./wp-content/themes/studexpo/img/temp/Conference.jpg)" class="swiper-slide">
+					<a href="?page_id=16" class="swiper-slide__link"></a>
+				</div>
+				
+				<!--
 				<div style="background-image: url(img/temp/city-wallpaper-3.png)" data-video="http://www.youtube.com/embed/NrgWDFGQEE0" data-title="Explorer New Waters" data-description="It's not a shower. It's an experience." class="swiper-slide">
 					<a href="modal-video.php" class="btn btn-default swiper-slide__video fancybox.ajax"></a>
 					<a href="" class="swiper-slide__link">
@@ -31,6 +44,7 @@ get_header(); ?>
 						</div>
 					</a>
 				</div>
+				 -->
 			</div>
 		</div>
 		<div class="swiper-pagination"></div>
@@ -54,7 +68,9 @@ get_header(); ?>
 								<i class="fa fa-university"></i>
 							</div>
 							<h3>EXPOSER</h3>
-							<p>Lorem ipsum dolor sit amet. Equitis Romani autem esse filium criminis loco poni ab accusatoribus neque his iudicantibus oportuit.</p>
+							<p>
+								Rencontrez de nouveaux clients, valorisez vos services et votre savoir-faire auprès des associations étudiantes. 
+							</p>
 							<button class="read-more">En savoir +</button>
 						</a>
 					</div>
@@ -64,7 +80,9 @@ get_header(); ?>
 								<i class="fa fa-graduation-cap"></i>
 							</div>
 							<h3>VISITER</h3>
-							<p>Lorem ipsum dolor sit amet. Equitis Romani autem esse filium criminis loco poni ab accusatoribus neque his iudicantibus oportuit.</p>
+							<p>
+								Visitez Stud'Expo pour découvrir les nouveautés et l'ensemble des services disponibles pour dynamiser vos campus.
+							</p>
 							<button class="read-more">En savoir +</button>
 						</a>
 					</div>
@@ -74,7 +92,9 @@ get_header(); ?>
 								<i class="fa fa-trophy"></i>
 							</div>
 							<h3>CONCOURS</h3>
-							<p>Lorem ipsum dolor sit amet. Equitis Romani autem esse filium criminis loco poni ab accusatoribus neque his iudicantibus oportuit.</p>
+							<p>
+								Stud'Trophy, le premier concours au service des étudiants mettant en compétition l'ensemble des associations étudiantes de 8 régions.
+							</p>
 							<button class="read-more">En savoir +</button>
 						</a>
 					</div>
@@ -84,7 +104,9 @@ get_header(); ?>
 								<i class="fa fa-briefcase"></i>
 							</div>
 							<h3>PARTENARIAT</h3>
-							<p>Lorem ipsum dolor sit amet. Equitis Romani autem esse filium criminis loco poni ab accusatoribus neque his iudicantibus oportuit.</p>
+							<p>
+								Soutenez Stud'Expo et les associations étudiantes françaises en s'appliquant et en devenant partenaires d'un événement exclusif.
+							</p>
 							<button class="read-more">En savoir +</button>
 						</a>
 					</div>
@@ -94,8 +116,8 @@ get_header(); ?>
 		<div class="content">
 			<div class="container-text">
 				<div class="container">
-					<h2>Qui sommes nous ?</h2>
-					<p>Lorem ipsum dolor sit amet.</p>
+					<h2>Les partenaires</h2>
+					<p></p>
 				</div>
 				<div class="container-slider">
 					<div class="slider-diapo">
@@ -118,36 +140,36 @@ get_header(); ?>
 			<div class="last-container-content">
 				<div class="left">
 					<div class="row-intro">
-						<h3>Pourquoi nous choisir</h3>
+						<h3>Pourquoi Stud'Expo ?</h3>
 						<ul class="why-us">
 							<li>
 								<a href="">
-									Lorem ipsum dolor
+									1ère plateforme d'échanges
 								</a>
 							</li>
 							<li>
 								<a href="">
-									Lorem ipsum dolor
+									Prestations clefs en main
 								</a>
 							</li>
 							<li>
 								<a href="">
-									Lorem ipsum dolor
+									Gain de temps
 								</a>
 							</li>
 							<li>
 								<a href="">
-									Lorem ipsum dolor
+									Une rencontre d'envergure
 								</a>
 							</li>
 							<li>
 								<a href="">
-									Lorem ipsum dolor
+									1er concours inter-asso
 								</a>
 							</li>
 							<li>
 								<a href="">
-									Lorem ipsum dolor
+									Centraliser l'information
 								</a>
 							</li>
 						</ul>
@@ -156,18 +178,12 @@ get_header(); ?>
 				<div class="center">
 					<div class="center-text">
 						<p>
-							Post hoc impie perpetratum quod in aliis quoque iam timebatur, 
-							tamquam licentia crudelitati indulta per suspicionum nebulas 
-							aestimati quidam noxii damnabantur. 
-							quorum pars necati, alii puniti bonorum.
-							Post hoc impie perpetratum quod in aliis quoque iam timebatur, 
-							tamquam licentia crudelitati indulta per suspicionum nebulas 
-							aestimati quidam noxii damnabantur. 
-							quorum pars necati, alii puniti bonorum.
-							Post hoc impie perpetratum quod in aliis quoque iam timebatur, 
-							tamquam licentia crudelitati indulta per suspicionum nebulas 
-							aestimati quidam noxii damnabantur. 
-							quorum pars necati, alii puniti bonorum.
+							1er rendez-vous inédit de la profession pour se rencontrer, négocier, échanger et comprendre tous les
+							aspects du marché, apporte une vision des prestations à 360° couvrant ainsi tous les besoins
+							envisageables : Voyages, Gala, Partenariats…<br /><br />
+							Stud'Expo – Le salon professionnel des associations étudiantes se déroulera le 21
+							novembre rentrée 2015 à Paris, au Parc des expositions de la porte de Champerret en partie privatisé (Hall
+							A) pour l’occasion.
 						</p>
 						<div class="container-skills">
 							<div class="bloc-skills">

@@ -4,10 +4,10 @@
 				<div class="col-md-5 liste-pages-footer">
 					<h4>StudExpo.com</h4>
 					<p>
-						Nihil morati post haec militares avidi saepe turbarum adorti sunt Montium primum, qui divertebat in proximo, levi corpore senem atque morbosum, et hirsutis resticulis cruribus eius innexis divaricaturn sine spiramento ullo ad usque praetorium traxere praefecti.
+						La société Stud'Expo, créée en décembre 2014 par Alexis KHETIB et Jonathan KEARNS, a pour objectif principal d’organiser, à la rentrée 2015, un projet innovant : le premier salon professionnel pour les fournisseurs des associations étudiantes françaises. 
 					</p>
-					<p>Phone : <span class="coordonnees">123 456 789</span></p>
-					<p>Email : <span class="coordonnees">infos@studexpo.com</span></p>
+					<p>Phone : <span class="coordonnees">06 58 03 09 20</span></p>
+					<p>Email : <span class="coordonnees">contact@stud-expo.fr</span></p>
 
 				</div>
 				<div class="col-md-3 liste-pages-footer middle">
@@ -23,6 +23,7 @@
 					<h4>Help</h4>
 					<ul>
 						<li><a href="?page_id=39">Infos pratiques</a></li>
+						<li><a href="#">FAQ</a></li>
 						<li><a href="?page_id=25">Mentions légales</a></li>
 						<li><a target="_blank" href="?page_id=13">Site Map</a></li>
 					</ul>

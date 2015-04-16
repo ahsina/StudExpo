@@ -73,6 +73,9 @@ function addNewVisteur(){
 						?>
 
 					</p>
+					
+					<img src="http://www.stud-expo.fr/StudExpo/wp-content/themes/studexpo/img/temp/page6.jpg" width="100%" style="margin-bottom:30px;" />
+					<img src="http://www.stud-expo.fr/StudExpo/wp-content/themes/studexpo/img/temp/page7.jpg" width="100%" style="margin-bottom:30px;" />
 					<h2>S'inscrire pour visiter le salon</h2>
 					
 					

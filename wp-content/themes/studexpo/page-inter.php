@@ -13,9 +13,15 @@ get_header(); ?>
 		<div class="content-inter">
 			<div class="container-content">
 				<div class="container">
-					<h2>Insere ton texte ma gueule !</h2>
-					<p>j'ai dit ton texte ma gueule !</p>
-					<?php echo get_content(); ?>
+					<p style="font-family:'Drugs' !important;">
+					<?php 
+
+						if ( have_posts() ) : while( have_posts() ) : the_post();
+					    the_content();
+						endwhile; endif;
+						
+						?>
+					</p>
 				</div>
 			</div>
 		</div>

@@ -10,27 +10,36 @@ get_header(); ?>
 			<a href="" class="btn btn-default slider__next"><i class="fa fa-forward"></i></a>
 			<a href="" class="btn btn-default slider__prev"><i class="fa fa-backward"></i></a>
 			<div class="swiper-wrapper">
-				<div style="background-image: url(img/temp/city-wallpaper-3.png)" data-title="Explorer New Waters" data-description="It's not a shower. It's an experience." class="swiper-slide">
+				<div style="background-image: url(img/temp/Slider/Concours.jpg)" data-title="Explorer New Waters" data-description="It's not a shower. It's an experience." class="swiper-slide">
 					<a href="" class="swiper-slide__link">
 						<div class="swiper-slide__title">
-							<h4>Vestibulum<small>Lorem ipsum dolor sit amet gros.</small></h4>
+							<h4>Concours<small>Lorem ipsum dolor sit amet gros.</small></h4>
 						</div>
 					</a>
 				</div>
-				<div style="background-image: url(img/temp/city-wallpaper-3.png)" class="swiper-slide">
-					<a href="" class="swiper-slide__link"></a>
+				<div style="background-image: url(img/temp/Slider/Conference.jpg)" class="swiper-slide">
+					<a href="" class="swiper-slide__link">
+						<h4>Conférences<small>Lorem ipsum dolor sit amet gros.</small></h4>
+					</a>
 				</div>
-				<div style="background-image: url(img/temp/city-wallpaper-3.png)" class="swiper-slide">
-					<a href="" class="swiper-slide__link"></a>
+				<div style="background-image: url(img/temp/Slider/Exposer.jpg)" class="swiper-slide">
+					<a href="" class="swiper-slide__link">
+						<h4>Exposer<small>Lorem ipsum dolor sit amet gros.</small></h4>
+					</a>
 				</div>
-				<div style="background-image: url(img/temp/city-wallpaper-3.png)" data-video="http://www.youtube.com/embed/NrgWDFGQEE0" data-title="Explorer New Waters" data-description="It's not a shower. It's an experience." class="swiper-slide">
+				<div style="background-image: url(img/temp/Slider/Visiteurs.jpg)" class="swiper-slide">
+					<a href="" class="swiper-slide__link">
+						<h4>Visiteurs<small>Lorem ipsum dolor sit amet gros.</small></h4>
+					</a>
+				</div>
+				<!-- <div style="background-image: url(img/temp/Slider/Visiteurs.jpg)" data-video="http://www.youtube.com/embed/NrgWDFGQEE0" data-title="Explorer New Waters" data-description="It's not a shower. It's an experience." class="swiper-slide">
 					<a href="modal-video.php" class="btn btn-default swiper-slide__video fancybox.ajax"></a>
 					<a href="" class="swiper-slide__link">
 						<div class="swiper-slide__title">
 							<h4>Vestibulum<small>Lorem ipsum dolor sit amet gros.</small></h4>
 						</div>
 					</a>
-				</div>
+				</div> -->
 			</div>
 		</div>
 		<div class="swiper-pagination"></div>

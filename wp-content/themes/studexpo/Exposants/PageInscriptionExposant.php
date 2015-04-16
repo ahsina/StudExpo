@@ -62,6 +62,8 @@ function addNewExposant(){
 		<div class="content-inter">
 			<div class="container-content">
 				<div class="container">
+				<img src="http://www.stud-expo.fr/StudExpo/wp-content/themes/studexpo/img/temp/page4.jpg" width="100%" style="margin-bottom:30px;" />
+				<img src="http://www.stud-expo.fr/StudExpo/wp-content/themes/studexpo/img/temp/page5.jpg" width="100%" style="margin-bottom:30px;" />
 					<h2>S'inscrire pour exposer dans le salon</h2>
 					<p><?php if ( have_posts() ) : while( have_posts() ) : the_post();
      the_content();
