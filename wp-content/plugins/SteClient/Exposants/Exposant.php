@@ -12,7 +12,7 @@
 			$NUprenom = $_POST['prenom'];
 			$NUfonction = $_POST['fonction'];
 			$NUemail = $_POST['email'];
-			$Password='test';
+			$Password=EncryptPassword('test');;
 			
 			if(!empty($NUlibelleEntreprise) && !empty($NUNumSiret) && !empty($NUSecteurActivite) && !empty($NUAdresseSiege) 
 			&& !empty($NUCodePostal) && !empty($NUVille) && !empty($NUCivilite) && !empty($NUnom) && !empty($NUprenom) && !empty($NUfonction)
@@ -21,8 +21,7 @@
 				global $wpdb;
 				$resut=$wpdb->insert( 
 				'ste_exposants', 
-				array('id' => NULL,'libelleEntreprise' => $NUlibelleEntreprise,'NumSiret' => $NUNumSiret, 'SecteurActivite' =>$NUSecteurActivite,
-				'AdresseSiege' => $NUAdresseSiege, 'CodePostal' => $NUCodePostal, 'Ville' => $NUVille, 'Civilite' => $NUCivilite, 'nom' => $NUnom,
+				array('id' => NULL,'libelleEntreprise' => $NUlibelleEntreprise,'NumSiret' => $NUNumSiret, 'SecteurActivite' =>$NUSecteurActivite,'AdresseSiege' => $NUAdresseSiege, 'CodePostal' => $NUCodePostal, 'Ville' => $NUVille, 'Civilite' => $NUCivilite, 'nom' => $NUnom,
 				'prenom' => $NUprenom, 'fonction' => $NUfonction)
 				);
 				
@@ -93,7 +92,7 @@ function getExposantInfo($id){
 		$_SESSION['MUAdresseSiege']=$user[0]->AdresseSiege;
 		$_SESSION['MUCodePostal']=$user[0]->CodePostal;
 		$_SESSION['MUVille']=$user[0]->Ville;
-		$_SESSION['civilite']=$user[0]->civilite;
+		$_SESSION['MUcivilite']=$user[0]->civilite;
 		$_SESSION['MUnom']=$user[0]->nom;
 		$_SESSION['MUprenom']=$user[0]->prenom;
 		$_SESSION['MUfonction']=$user[0]->fonction;
@@ -114,7 +113,7 @@ function UpdateExposantInfo(){
 		$Exprenom = $_POST['prenom'];
 		$Exfonction = $_POST['fonction'];
 		$Exemail = $_POST['email'];
-		$ExPassword ='';
+		$ExPassword =EncryptPassword('test');
 		if(!empty($ExidExposant) && !empty($ExlibelleEntreprise) && !empty($ExNumSiret) && !empty($ExSecteurActivite) 
 		&& !empty($ExAdresseSiege) && !empty($ExCodePostal) && !empty($ExVille) && !empty($ExCivilite) && !empty($Exnom) && !empty($Exprenom)
 		&& !empty($Exfonction)&& !empty($Exemail)){
@@ -130,7 +129,7 @@ function UpdateExposantInfo(){
 			$result=$wpdb->update( 
 				'ste_connexion', 
 				array('email' => $Exemail,'password' =>$ExPassword)
-			,array( 'userid' => $ExidVisiteur,'role'=>2)
+			,array( 'userid' => $ExidExposant,'role'=>2)
 			);
 		}
 	
@@ -201,6 +200,8 @@ addNewExposant();
 	</div>
 	<div style="width:100%">
 		<label>Civilite</label>
+		<select name="ListCivilites">
+			<option>Selectionner</option>
 		<?php if(!empty($idExposant)){
 		getListCivilites($_SESSION['MUcivilite']); 
 		}

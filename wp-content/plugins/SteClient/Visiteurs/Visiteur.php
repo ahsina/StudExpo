@@ -11,7 +11,7 @@
 			$NUtel = $_POST['tel'];
 			$NUadresse = $_POST['adresse'];
 			$NUcodePostal = $_POST['codePostal'];
-			$Password='test';
+			$Password = EncryptPassword("test");
 			
 			if(!empty($NUcivilite) && !empty($NUnom) && !empty($NUprenom) && !empty($NUnomAsso) 
 			&& !empty($NUnumAsso) && !empty($NUemail) && !empty($NUville) && !empty($NUtel)&& !empty($NUadresse) && !empty($NUcodePostal)){
@@ -104,7 +104,7 @@ function UpdateVisiteurInfo(){
 		$Extel = $_POST['tel'];
 		$Exadresse = $_POST['adresse'];
 		$ExcodePostal = $_POST['codePostal'];
-		$ExPassword ='';
+		$ExPassword =EncryptPassword('');
 		if(!empty($Excivilite) && !empty($Exnom) && !empty($Exprenom) && !empty($ExnomAsso) 
 		&& !empty($ExnumAsso) && !empty($Exemail) && !empty($Exville) && !empty($Extel)&& !empty($Exadresse)&& !empty($ExcodePostal)){
 			
@@ -112,7 +112,7 @@ function UpdateVisiteurInfo(){
 			$result=$wpdb->update( 
 				'ste_visiteurs', 
 				array('civilite' => $Excivilite,'nom' => $Exnom, 'prenom' =>$Exprenom,
-			'nomAsso' => $ExnomAsso, 'numAsso' => $ExnumAsso, 'email' => $Exemail, 'ville' => $Exville, 'Tel' => $Extel,'adresse' =>$Exadresse
+			'nomAsso' => $ExnomAsso, 'numAsso' => $ExnumAsso, 'ville' => $Exville, 'Tel' => $Extel,'adresse' =>$Exadresse
 			,'codepostal' =>$ExcodePostal)
 			,array( 'id' => $ExidVisiteur)
 			);
@@ -126,7 +126,7 @@ function UpdateVisiteurInfo(){
 		}
 	
 		//reactualiser les données de l'utilisateur
-		$_SESSION['MUcivilite']=$ExidVisiteur;
+		$_SESSION['MUcivilite']=$Excivilite;
 		$_SESSION['MUnom']=$Exnom;
 		$_SESSION['MUprenom']=$Exprenom;
 		$_SESSION['MUnomAsso']=$ExnomAsso;
@@ -147,12 +147,15 @@ addNewVisteur();
 	<input type="hidden" name="idV" value="<?php if(!empty($idVisiteur)){ echo $idVisiteur;};?>"/>
 	<div>
 		<label>Civilite</label>
+		<select name="ListCivilites">
+			<option>Selectionner</option>
 		<?php if(!empty($idVisiteur)){
 		getListCivilites($_SESSION['MUcivilite']); 
 		}
 		else{
 		getListCivilites(null);
 		}?>
+		</select>
 	</div>
 	
 	<div style="width:100%">

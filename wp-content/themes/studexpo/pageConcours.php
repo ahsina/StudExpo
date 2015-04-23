@@ -27,6 +27,13 @@ get_header(); ?>
 						
 						?>
 					</p>
+					</br>
+					<?php if($_SESSION['userRole']==null or $_SESSION['userRole']==1){ ?>
+					<center>
+					<button onclick="window.location='?page_id=41'" class="btn button-primary valider">Participer au concours</button>
+					</center>
+					
+					<?php } ?>
 				</div>
 			</div>
 		</div>

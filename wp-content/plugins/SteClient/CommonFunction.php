@@ -1,4 +1,5 @@
 <?php
+session_start();
 function getListCivilites($id){
 
 global $wpdb;
@@ -132,7 +133,6 @@ function Login()
     {
         return false;
     }
-     
     if(empty($_POST['password']))
     {
         return false;
@@ -145,11 +145,7 @@ function Login()
         return false;
     }
 	else{
-     
-		session_start();
-		$_SESSION['connexionID'] = $result;
 		return true;
-	
 	}
 }
 
@@ -158,12 +154,15 @@ function CheckLoginInDB($email,$password){
 		$user = $wpdb->get_results(
 		"SELECT c.id, c.email,c.password, c.userid,c.role
 		FROM ste_connexion c where c.email='".$email."'");
-		
 		if(sizeof($user)==1){
 			if(validatePassword($password,$user[0]->password)){
+				$_SESSION['connexionID'] = $user[0]->id;
+				$_SESSION['userRole'] = $user[0]->role;
+				setUserInSession($user[0]->userid,$user[0]->role);
 				return $user[0]->id;
 			}
 			else{
+
 				return -1;
 			}
 		}
@@ -175,7 +174,6 @@ function CheckLoginInDB($email,$password){
 function CheckLogin()
 {
      //session_start();
-      
      if(empty($_SESSION['connexionID']))
      {
         return false;
@@ -183,14 +181,8 @@ function CheckLogin()
      return true;
 }
 function logout(){
-	if(!empty($_POST['logout'])){
-		echo 'logout';
-		session_start();
 		session_destroy();
-		exit();
-	}
 }
-logout();
 function connect(){
 	if(!CheckLogin()){	
 		if(!empty($_POST['email']) && !empty($_POST['password'])){
@@ -210,5 +202,60 @@ function connect(){
 	}
 }
 
+function setUserInSession($id,$roleid){
+	
+	if($roleid==1){
+		//User is Visiteur
+		getVisiteurById($id);
+	}
+	else{
+		//User is Exposant
+		getExposantById($id);
+	}
+	
+}
+
+function getVisiteurById($id){
+		global $wpdb;
+		$user = $wpdb->get_results(
+		"SELECT v.id,v.civilite,v.nom,v.prenom,v.nomAsso,v.numAsso,v.ville,v.tel,v.adresse,v.codepostal,c.email
+		FROM ste_visiteurs v, ste_connexion c where v.id=".$id." and v.id=c.userid and c.role=1");
+
+		$_SESSION['ID']=$id;
+		$_SESSION['civilite']=$user[0]->civilite;
+		$_SESSION['nom']=$user[0]->nom;
+		$_SESSION['prenom']=$user[0]->prenom;
+		$_SESSION['nomAsso']=$user[0]->nomAsso;
+		$_SESSION['numAsso']=$user[0]->numAsso;
+		$_SESSION['email']=$user[0]->email;
+		$_SESSION['ville']=$user[0]->ville;
+		$_SESSION['tel']=$user[0]->tel;
+		$_SESSION['adresse']=$user[0]->adresse;
+		$_SESSION['codePostal']=$user[0]->codepostal;
+		
+		
+}
+
+function getExposantById($id){
+		global $wpdb;
+		$user = $wpdb->get_results(
+		"SELECT cl.civilite,cl.libelleEntreprise,cl.NumSiret,cl.SecteurActivite,cl.AdresseSiege,cl.CodePostal,cl.Ville,cl.nom,cl.prenom,cl.fonction,c.email
+		FROM ste_exposants cl, ste_connexion c where cl.id=".$id." and cl.id=c.userid and c.role=2");
+		
+		$_SESSION['ID']=$id;
+		$_SESSION['libelleEntreprise']=$user[0]->libelleEntreprise;
+		$_SESSION['NumSiret']=$user[0]->NumSiret;
+		$_SESSION['SecteurActivite']=$user[0]->SecteurActivite;
+		$_SESSION['AdresseSiege']=$user[0]->AdresseSiege;
+		$_SESSION['CodePostal']=$user[0]->CodePostal;
+		$_SESSION['Ville']=$user[0]->Ville;
+		$_SESSION['civilite']=$user[0]->civilite;
+		$_SESSION['nom']=$user[0]->nom;
+		$_SESSION['prenom']=$user[0]->prenom;
+		$_SESSION['fonction']=$user[0]->fonction;
+		$_SESSION['email']=$user[0]->email;
+		
+		
+}
 
 ?>

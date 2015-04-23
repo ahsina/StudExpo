@@ -37,13 +37,9 @@ $('body').on('change', '#file', function(){
     function imageIsLoaded(e) {
         $('#previewimg' + abc).attr('src', e.target.result);
     };
-
-    $('#upload').click(function(e) {
-        var name = $(":file").val();
-        if (!name)
-        {
-            alert("First Image Must Be Selected");
-            e.preventDefault();
-        }
-    });
+    
 });
+
+function clearimage(idDivImg){
+                $('#'+idDivImg).empty();
+}

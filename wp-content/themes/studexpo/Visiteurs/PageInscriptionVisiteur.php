@@ -21,7 +21,7 @@ function addNewVisteur(){
 			$NUpassword = $_POST['password'];
 			$NUconfirmation = $_POST['confirmation'];
 
-			if(!empty($NUpassword) && !empty($NUconfirmation) && $NUpassword==$NUconfirmation){
+			if(!empty($NUpassword) && !empty($NUconfirmation)){
 				if(!empty($NUcivilite) && !empty($NUnom) && !empty($NUprenom) && !empty($NUnomAsso) 
 				&& !empty($NUnumAsso) && !empty($NUemail) && !empty($NUville) && !empty($NUtel)&& 
 				!empty($NUadresse) && !empty($NUcodePostal)){
@@ -76,6 +76,7 @@ function addNewVisteur(){
 					
 					<img src="http://www.stud-expo.fr/StudExpo/wp-content/themes/studexpo/img/temp/page6.jpg" width="100%" style="margin-bottom:30px;" />
 					<img src="http://www.stud-expo.fr/StudExpo/wp-content/themes/studexpo/img/temp/page7.jpg" width="100%" style="margin-bottom:30px;" />
+					<?php if($_SESSION['userRole']==null){ ?>
 					<h2>S'inscrire pour visiter le salon</h2>
 					
 					
@@ -85,7 +86,7 @@ function addNewVisteur(){
 								<input type="hidden" name="idV" value="<?php if(!empty($idVisiteur)){ echo $idVisiteur;};?>"/>
 								<div class="bloc-form-civilite">
 									<label>Civilite</label><br />
-									<select>
+									<select name="ListCivilites">
 										<option>Selectionner</option>
 										<?php getListCivilites(null);?>
 									</select>
@@ -128,7 +129,7 @@ function addNewVisteur(){
 
 								<div class="bloc-form">
 									<label>Adresse (suite)</label><br />
-									<input type="text" name="adresse" value=""/>
+									<input type="text" name="adresseSuite" value=""/>
 								</div>
 
 								<div class="bloc-form pair-bloc">
@@ -156,6 +157,13 @@ function addNewVisteur(){
 							</div>
 						</form>
 					</div>
+					<?php }
+						else{
+					?>
+					<center>
+					<button type="submit" value="demandeBadge" name="user-update" class="btn button-primary valider">Demander mon badge</button>
+					</center>
+					<?php } ?>
 				</div>
 			</div>
 		</div>

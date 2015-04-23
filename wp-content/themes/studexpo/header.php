@@ -1,3 +1,13 @@
+<?php 
+session_start();
+$PageCompte="";
+$PageExposer='?page_id=12';
+if($_POST['deconnexion']){
+logout();
+header('Location: '.get_home_url());   
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,15 +55,19 @@
 					<a href="" target="_blank"><i class="fa fa-google-plus"></i></a>
 					<a href="" target="_blank"><i class="fa fa-rss"></i></a>
 				</div>
-				<?php 
+				<?php
+				if(isset($_POST['connexion']) && !empty($_POST['email']) && !empty($_POST['password'])){
+				$result=Login();
+				}
 				if(!CheckLogin()) {
+					
 					echo "
 						<ul class='nav navbar-nav navbar-right pull-right'>
-							<!--<li>
+							<li>
 								<a href='wp-content/themes/studexpo/modal-sign-in.php' class='fancyBoxTitle fancybox.ajax' ref='signin' title='Se connecter'>
 									<i class='fa fa-user'></i> Connexion
 								</a>
-							</li>-->
+							</li>
 							<li>
 								<a href='wp-content/themes/studexpo/modal-inscription.php' class='fancyBoxTitle fancybox.ajax' ref='inscription' title='S'inscrire'>
 									<i class='fa fa-sign-in'></i> Inscription
@@ -62,18 +76,30 @@
 						</ul>
 					";
 				} else {
+					
+					if($_SESSION['userRole']==1){
+						$PageCompte='?page_id=31';
+						$PageExposer='?page_id=12';
+					}
+					else if($_SESSION['userRole']==2){
+						$PageCompte='?page_id=35';
+						$PageExposer='?page_id=38';
+					}
 					echo "
 
 						<ul class='nav navbar-nav navbar-right pull-right'>
 							<li>
-								<a href='modal-sign-in.php' class='fancyBoxTitle fancybox.ajax' ref='signin' title='Se connecter'>
-									<i class='fa fa-user'></i> Bonjour, User
+								<a href='$PageCompte'  title='Se connecter'>
+									<i class='fa fa-user'></i> ".stripslashes(strtoupper($_SESSION['nom']).' '.$_SESSION['prenom'])."
 								</a>
 							</li>
 							<li>
-								<a href='#' title='S'inscrire'>
-									<i class='fa fa-sign-out'></i> Deconnexion
+								<form action='' name='logoutform' method='post'>
+								<a href='#' name='deconnexion' title='S'inscrire' onclick='document.logoutform.submit();'>
+									<i class='fa fa-sign-out' ></i> Deconnexion
+									<input type='hidden' name='deconnexion' value='true' />
 								</a>
+								</form>
 							</li>
 						</ul>
 					";
@@ -93,7 +119,7 @@
 					<nav class="nav-collapse">
 						<ul>
 							<li><a href="index.php">Le salon</a></li>
-							<li><a href="?page_id=12">Exposer</a></li>
+							<li><a href="<?php echo $PageExposer; ?>">Exposer</a></li>
 							<li><a href="?page_id=10">Visiter</a></li>
 							<li><a href="?page_id=14">Concours</a></li>
 							<li><a href="?page_id=16">Conférences</a></li>

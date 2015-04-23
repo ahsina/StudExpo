@@ -1,6 +1,6 @@
 <?php 	
 	function addNewPack(){
-		if (empty($_POST['idV'])) {
+		if (empty($_POST['idV']) && isset($_POST['save'])) {
 			$NUlibelle = $_POST['libelle'];
 			$NUsuperficie = $_POST['superficie'];
 			$NUprixSA = $_POST['prixSA'];
@@ -10,18 +10,19 @@
 			$NUcaracteristique = $_POST['caracteristiqueToAdd'];
 			
 			if(!empty($NUlibelle) && !empty($NUsuperficie) && !empty($NUprixSA) &&
-			!empty($NUprixSN) && !empty($NUNbPack) && !empty($NUdisponibilite) && !empty($NUcaracteristique)){
+			!empty($NUprixSN) && !empty($NUNbPack) && !empty($NUdisponibilite)){
 				global $wpdb;
 				$resut=$wpdb->insert( 
 				'ste_pack', 
 				array('id' => NULL,'libelle' => $NUlibelle,'superficie' => $NUsuperficie, 'prix_sa' =>$NUprixSA,
 				'prix_sn' => $NUprixSN, 'NbPack' => $NUNbPack, 'disponibilite' => $NUdisponibilite)
 				);
-				$wpdb->insert( 
-				'ste_pack', 
-				array('id' => NULL,'libelle' => $NUlibelle,'superficie' => $NUsuperficie, 'prix_sa' =>$NUprixSA,
-				'prix_sn' => $NUprixSN, 'NbPack' => $NUNbPack, 'disponibilite' => $NUdisponibilite)
-				);
+				foreach ($NUcaracteristique as $carac){
+					$wpdb->insert( 
+					'ste_pack_caracteristique', 
+					array('id' => NULL,'idcaracteristique' => $carac,'idpack' => $wpdb->insert_id)
+					);
+				}
 				/* $wpdb->insert( 
 					'ste_connexion', 
 					array('id' => NULL, 'email' => $NUemail,'password' => $Password,'role'=>1,'userid'=>$wpdb->insert_id)
@@ -187,7 +188,7 @@ addNewPack();
 	</div>
 	<div>
 		<label>Categorie</label>
-		<select name="listofcategorie" onchange="Packform.submit();">
+		<select name="listofcategorie" onchange="document.Packform.submit();">
 		<option value="0">Selectionnez</option>
 			<?php getListCategorieForPack($_SESSION['listofcategorie']); ?>
 		</select>
@@ -195,33 +196,33 @@ addNewPack();
 	<div>
 		<div style="display: block;float: left;">
 		<label>Selectionnez des Eléments</label>
-		<select name="caracteristique[]" id="caracteristique" multiple="multiple" style="width:200px;">
-			<?php getListofCaracteristiqueByCategorie($_POST['listofcategorie']); ?>
-		</select>
-		</div>
-		<div style="display: block;float: left;">
-		<input type="button" value=">" onclick="return getSelectedItemList('#caracteristique','#caracteristiqueToAdd');"/></br>
-		<input type="button" value="<" onclick="return removeSelectedItemList('#caracteristiqueToAdd');"/></br>
-		</div>
-		<div style="display: block;">
-		<label>Element du nouveau Pack</label>
-		<select multiple name="vari[]">
-		<option value="adriana">Adriana</option>
-      <option value="alessandra">Alessandra</option>
-      <option value="candice">Candice</option>
-      <option value="lili">Lili</option>
-			<?php if(!empty($_POST['caracteristique'])){
-					echo '<script language="Javascript">
-alert ("coucou." )
-</script>';
-					echo getListofCaracteristiqueByIds($_POST['vari']);
-					}?>
-		</select>
+		<script type="text/javascript">
+			$('#example-multiple-optgroups').multiselect();
+		</script>
+		<select id="example-multiple-optgroups">
+		<?php
+			global $wpdb;
+			$listcategorie = $wpdb->get_results(
+			"SELECT id,libelle
+			FROM ste_categorie");
+			foreach ($listcategorie as $categorie){
+		
+				echo "<optgroup label='".$categorie->libelle."'>";
+				$listcaracteristique = $wpdb->get_results(
+				"SELECT id,libelle
+				FROM ste_caracteristique where idcategorie=".$categorie->id);
+				foreach ($listcaracteristique as $caracteristique){
+					echo "<option value='".$caracteristique->id."'>".$caracteristique->libelle."</option>";
+				}
+				echo "</optgroup>";
+			
+			}
+		?>
 		</div>
 	</div>
 	
 <div class="wrap">
-<input type="submit" value="Enregistrer" name="user-update" class="button-primary"/>
+<input type="submit" value="Enregistrer" name="save" class="button-primary"/>
 <a href="#" class="button-secondary"> Annuler</a>
 </div>
 </form>

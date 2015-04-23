@@ -2,7 +2,21 @@
 /*
 Template Name: contact
 */
-get_header(); ?>
+get_header();
+function getSliderHTML(){
+	global $wpdb;
+		$sliders = $wpdb->get_results("SELECT id,image,titre,soustitre,url FROM ste_slider ORDER BY id");
+		foreach ($sliders as $slider){
+			echo "<div style='background-image: url(./wp-content/plugins/GestionContenu/".$slider->image.")' class='swiper-slide'>";
+			echo "		<a href='".$slider->url."' class='swiper-slide__link'>";
+			echo "			<div class='swiper-slide__title'>";
+			echo "			<h4>".$slider->titre."<small>".$slider->soustitre."</small></h4>";
+			echo "			</div>";
+			echo "		</a>";
+			echo "</div>";
+		}
+}
+ ?>
 
 	<div class="page page-index">
 		<!-- SLIDER -->
@@ -10,41 +24,10 @@ get_header(); ?>
 			<a href="" class="btn btn-default slider__next"><i class="fa fa-forward"></i></a>
 			<a href="" class="btn btn-default slider__prev"><i class="fa fa-backward"></i></a>
 			<div class="swiper-wrapper">
-				<div style="background-image: url(./wp-content/themes/studexpo/img/temp/Concours.jpg)" data-title="Explorer New Waters" data-description="It's not a shower. It's an experience." class="swiper-slide">
-					<a href="?page_id=14" class="swiper-slide__link">
-						<div class="swiper-slide__title">
-							<h4>Concours STUD'TROPHY<small>Mettez votre créativité au service de vos étudiants</small></h4>
-						</div>
-					</a>
-				</div>
-				<div style="background-image: url(./wp-content/themes/studexpo/img/temp/Exposer.jpg)" class="swiper-slide">
-					<a href="?page_id=12" class="swiper-slide__link">
-						<div class="swiper-slide__title">
-						<h4>Devenez exposant<small>Exposez à un événement inédit pour rencontrer toutes les associations étudiantes</small></h4>
-						</div>
-					</a>
-				</div>
-				<div style="background-image: url(./wp-content/themes/studexpo/img/temp/Visiteurs.jpg)" class="swiper-slide">
-					<a href=?page_id=10"" class="swiper-slide__link">
-					<div class="swiper-slide__title">
-						<h4>Venez rencontrer vos fournisseurs<small>Participez à l'inauguration du 1er événement dédié aux associations étudiantes </small></h4>
-					</div>
-					</a>
-				</div>
-				<div style="background-image: url(./wp-content/themes/studexpo/img/temp/Conference.jpg)" class="swiper-slide">
-					<a href="?page_id=16" class="swiper-slide__link"></a>
-				</div>
 				
-				<!--
-				<div style="background-image: url(img/temp/city-wallpaper-3.png)" data-video="http://www.youtube.com/embed/NrgWDFGQEE0" data-title="Explorer New Waters" data-description="It's not a shower. It's an experience." class="swiper-slide">
-					<a href="modal-video.php" class="btn btn-default swiper-slide__video fancybox.ajax"></a>
-					<a href="" class="swiper-slide__link">
-						<div class="swiper-slide__title">
-							<h4>Vestibulum<small>Lorem ipsum dolor sit amet gros.</small></h4>
-						</div>
-					</a>
-				</div>
-				 -->
+				 <?php 
+					getSliderHTML();
+				?>
 			</div>
 		</div>
 		<div class="swiper-pagination"></div>
